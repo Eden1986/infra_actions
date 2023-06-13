@@ -67,7 +67,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY1 }}
           passphrase: ${{ secrets.PASSPHRASE }} 
-          script:
+          script: |
             sudo docker pull eden1986/first:latest
             sudo docker stop $(sudo docker ps -a -q)
             sudo docker run --rm -d -p 5000:5000 eden1986/first:latest
